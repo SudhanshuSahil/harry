@@ -1,4 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+declare var $:any;
+
 
 @Component({
   selector: 'app-reg',
@@ -15,7 +18,7 @@ export class RegComponent implements OnInit {
   mem3;
   password;
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void { 
     this.checkFullPageBackgroundImage();
@@ -39,11 +42,21 @@ export class RegComponent implements OnInit {
 };
 
 submit(){
-  // mem1;
-  // mem2;
-  // mem3;
-  // password;
     console.log(this.team, this.mem1, this.mem2, this.mem3, this.password)
+    var url = "https://compi-backend.ecell.in/harrypotter/reg/";
+    var body = new FormData();
+    body.append('username', this.team)
+    body.append('password', this.password)
+    body.append('mem1', this.mem1)
+    body.append('mem2', this.mem2)
+    body.append('mem3', this.mem3)
+
+    this.http.post<any>(url, body).subscribe(
+      data => {
+        console.log(data)
+        localStorage.setItem('hp_token', data['token'])
+      }
+    )
 
 };
 
