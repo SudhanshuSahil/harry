@@ -78,9 +78,10 @@
                 <br>
                 <br>Dynamically innovate resource-leveling customer service for state of the art customer service.
                 <br>
-                  <div style="text-align: center">
+                  <div *ngFor="let lvl of lvls" class="py-3" style="text-align: center">
                     <a style="background-color: rgba(240, 217, 15, 0.863); color: white; padding: 14px 25px; text-align: center; text-decoration: none; display: inline-block;" href="market">
-                      Start
+                      Level {{lvl.level}}, <br />
+                      Link: {{lvl.path_from_base}}
                     </a>
                   </div>
                   
