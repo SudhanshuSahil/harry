@@ -47,7 +47,7 @@
                           <div class="card zoom">
                             <div class="card-body text-center">
                               <p class="card-text">Use Flying Broomstick</p>
-                              <button class="btn btn-outline-default btn-round" (click)="showSwal('basic')">Choose</button>
+                              <a (click)="send('use_flying_broomstick')" class="btn btn-outline-default btn-round">Choose</a>
                             </div>
                           </div>
                         </div>
@@ -55,7 +55,7 @@
                             <div class="card zoom">
                               <div class="card-body text-center">
                                 <p class="card-text">Use Floo Powder</p>
-                                <button class="btn btn-outline-default btn-round" (click)="showSwal('basic')">Choose</button>
+                                <a (click)="send('no_of_floo_powder')" class="btn btn-outline-default btn-round">Choose</a>
                               </div>
                             </div>
                           </div>
@@ -63,7 +63,7 @@
                             <div class="card zoom">
                               <div class="card-body text-center">
                                 <p class="card-text">Pay 8000 cash</p>
-                                <button class="btn btn-outline-default btn-round" (click)="showSwal('basic')">Choose</button>
+                                <a (click)="send('pay_8000')" class="btn btn-outline-default btn-round">Choose</a>
                               </div>
                             </div>
                           </div>
@@ -80,15 +80,15 @@
 
           <div class= 'card-footer' style="color:beige; text-align: center">
             <h2 style="text-align: center">Items</h2>
-            <p style="text-align:right"> Account Balance: 75000</p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Est rerum, repellendus error aut tenetur voluptatum, molestias cupiditate labore dolores quisquam cumque earum? Odit animi unde consectetur perferendis iste dignissimos exercitationem.
+            <h5 style="text-align:right"> Account Balance: {{team.cash}}</h5>
+            <!-- Lorem ipsum dolor sit amet consectetur adipisicing elit. Est rerum, repellendus error aut tenetur voluptatum, molestias cupiditate labore dolores quisquam cumque earum? Odit animi unde consectetur perferendis iste dignissimos exercitationem. -->
             <div class="main-content items">
               <!-- <div class="places-sweet-alerts"> -->
                 <div class="row">
                   <div class="col-md-3">
                     <div class="card">
                       <div class="card-body text-center">
-                        <p class="card-text">...and by passing a parameter, you can execute something else for "Cancel"</p>
+                        <p class="card-text">Has a wand? {{team.wand}}</p>
                         <button class="btn btn-outline-default btn-round" (click)="showSwal('warning-message-and-cancel')">Sell</button>
                       </div>
                     </div>
@@ -96,8 +96,8 @@
                     <div class="col-md-3">
                       <div class="card ">
                         <div class="card-body text-center">
-                          <p class="card-text">...and by passing a parameter, you can execute something else for "Cancel"</p>
-                          <button class="btn btn-outline-default btn-round" (click)="showSwal('warning-message-and-cancel')">Sell</button>
+                          <p class="card-text">no of broomsticks: {{team.no_of_broomstick}}</p>
+                          <button class="btn btn-outline-default btn-round" >Sell</button>
                         </div>
                       </div>
                     </div>
