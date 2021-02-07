@@ -41,7 +41,6 @@ import { Lvl7p1CopyComponent } from './final/lvl7p1-copy/lvl7p1-copy.component';
         AppComponent,
         AdminLayoutComponent,
         AuthLayoutComponent,
-        RegComponent,
         LogComponent,
         MainComponent,
         Lvl2CopyComponent,

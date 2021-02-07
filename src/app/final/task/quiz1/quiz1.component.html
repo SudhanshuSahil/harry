@@ -8,7 +8,7 @@
             <span class="navbar-toggler-bar bar3"></span>
           </button>
         </div>
-        <a class="navbar-brand" routerLinkActive="active" [routerLink]="['/dashboard']">Harry Potter</a>
+        <a class="navbar-brand" routerLinkActive="active">Harry Potter</a>
       </div>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-bar navbar-kebab"></span>
@@ -53,11 +53,11 @@
                           <i class="nc-icon nc-single-02"></i>
                         </span>
                       </div>
-                      <input type="text" class="form-control" placeholder="Answer..." (focus)="focus=true" (blur)="focus=false">
+                      <input type="text" name="ans" [(ngModel)]="ans" class="form-control" placeholder="Answer..." (focus)="focus=true" (blur)="focus=false">
                     </div>
                   </div>
                   <div class="card-footer ">
-                    <button class="btn btn-warning btn-round btn-block mb-3">Submit</button>
+                    <button (click)="send()" class="btn btn-warning btn-round btn-block mb-3">Submit</button>
                   </div>
                 </div>
               </form>
@@ -67,54 +67,6 @@
           <br>
           <!-- items -->
 
-
-          <div class= 'card-footer' style="color:beige; text-align: center">
-            <h2 style="text-align: center">Items</h2>
-            <p style="text-align:right"> Account Balance: 75000</p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Est rerum, repellendus error aut tenetur voluptatum, molestias cupiditate labore dolores quisquam cumque earum? Odit animi unde consectetur perferendis iste dignissimos exercitationem.
-                        
-            <div class="main-content items">
-              <div class="places-sweet-alerts">
-                <div class="row">
-                  <div class="col-md-3">
-                    <div class="card ">
-                      <div class="card-body text-center">
-                        <p class="card-text">...and by passing a parameter, you can execute something else for "Cancel"</p>
-                        <button class="btn btn-outline-default btn-round" (click)="showSwal('warning-message-and-cancel')">Sell</button>
-                      </div>
-                    </div>
-                  </div>
-                    <div class="col-md-3">
-                      <div class="card ">
-                        <div class="card-body text-center">
-                          <p class="card-text">...and by passing a parameter, you can execute something else for "Cancel"</p>
-                          <button class="btn btn-outline-default btn-round" (click)="showSwal('warning-message-and-cancel')">Sell</button>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-3">
-                      <div class="card ">
-                        <div class="card-body text-center">
-                          <p class="card-text">...and by passing a parameter, you can execute something else for "Cancel"</p>
-                          <button class="btn btn-outline-default btn-round" (click)="showSwal('warning-message-and-cancel')">Sell</button>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-3">
-                      <div class="card ">
-                        <div class="card-body text-center">
-                          <p class="card-text">...and by passing a parameter, you can execute something else for "Cancel"</p>
-                          <button class="btn btn-outline-default btn-round" (click)="showSwal('warning-message-and-cancel')">Sell</button>
-                        </div>
-                      </div>
-                    </div>
-                </div>
-              </div>
-            </div>
-            <br>
-            <br>
-
-          </div>
         </div>
         <!-- <footer class="footer footer-black  footer-white ">
           <div class="container">
