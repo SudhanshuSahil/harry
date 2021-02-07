@@ -34,47 +34,77 @@
       <div class="main-content items" style="color:azure">
         <h5>Market Place</h5>
         <br>
-        <div class="places-sweet-alerts">
-          <div class="row">
-            <div class="col-md-3">
-              <div class="card ">
-                <div class="card-body text-center">
-                  <p class="card-text">Modal window with input field</p>
-                  <button class="btn btn-outline-default btn-round" (click)="showSwal('input-field')">Bid</button>
-                </div>
+        <form class="form" method="" action="">
+          <div class="">
+            <div class="card-body old">
+              <div class="container row">
+                  <div class="col-md-4">
+                    <div class="card zoom">
+                      <div class="card-body text-center">
+                        <p class="card-text">Flying Broomstick</p>
+                        <p><i> </i></p>
+                        <a (click)="send('broomstick')" class="btn btn-outline-default btn-round">Choose</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                      <div class="card zoom">
+                        <div class="card-body text-center">
+                          <p class="card-text">Floo Powder</p>
+                          <p><i> </i></p>
+                          <a (click)="send('floo_powder')" class="btn btn-outline-default btn-round">Choose</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="card zoom">
+                        <div class="card-body text-center">
+                          <p class="card-text">Polyjuice Portion</p>
+                          <p><i> </i></p>
+                          <a (click)="send('polyjuice_potion')" class="btn btn-outline-default btn-round">Choose</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="card zoom">
+                        <div class="card-body text-center">
+                          <p class="card-text">Gillyweed</p>
+                          <p><i> </i></p>
+                          <a (click)="send('gillyweed')" class="btn btn-outline-default btn-round">Choose</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="card zoom">
+                        <div class="card-body text-center">
+                          <p class="card-text">Invisible Cloak</p>
+                          <p><i> </i></p>
+                          <a (click)="send('invisible_cloak')" class="btn btn-outline-default btn-round">Choose</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="card zoom">
+                        <div class="card-body text-center">
+                          <p class="card-text">Secret Contact</p>
+                          <p><i> </i></p>
+                          <a (click)="send('contact')" class="btn btn-outline-default btn-round">Choose</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="card zoom">
+                        <div class="card-body text-center">
+                          <p class="card-text">Room of Requirements</p>
+                          <p><i> </i></p>
+                          <a (click)="send('room')" class="btn btn-outline-default btn-round">Choose</a>
+                        </div>
+                      </div>
+                    </div>
               </div>
             </div>
-            <div class="col-md-3">
-                <div class="card ">
-                  <div class="card-body text-center">
-                    <p class="card-text">Modal window with input field</p>
-                    <button class="btn btn-outline-default btn-round" (click)="showSwal('input-field')">Bid</button>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-3">
-                <div class="card ">
-                  <div class="card-body text-center">
-                    <p class="card-text">Modal window with input field</p>
-                    <button class="btn btn-outline-default btn-round" (click)="showSwal('input-field')">bid</button>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-3">
-                <div class="card ">
-                  <div class="card-body text-center">
-                    <p class="card-text">Modal window with input field</p>
-                    <button class="btn btn-outline-default btn-round" (click)="showSwal('input-field')">Bid</button>
-                  </div>
-                </div>
-              </div>
           </div>
-        </div>
-        <div style="text-align: center">
-          <a style="background-color:rgba(214, 214, 21, 0.897); color: white; padding: 14px 25px; text-align: center; text-decoration: none; display: inline-block;" href="task1">
-            Next
-          </a>
-        </div>
+      </form>
       </div>
     </div>
   <!-- <div *ngFor = " let college of colleges">

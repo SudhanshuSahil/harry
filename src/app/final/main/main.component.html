@@ -79,13 +79,10 @@
                 <br>Dynamically innovate resource-leveling customer service for state of the art customer service.
                 <br>
                   <div *ngFor="let lvl of lvls" class="py-3" style="text-align: center">
-                    <a style="background-color: #999; color: white; padding: 14px 25px; text-align: center; text-decoration: none; display: inline-block;" href="market">
-                      Level {{lvl.level}}, <br />
-                     
+                    <a (click)="redirect_to(lvl.path_from_base)" style="background-color: #999; color: white; padding: 14px 25px; text-align: center; text-decoration: none; display: inline-block;" >
+                      Level {{lvl.level}} <br />
                     </a>
                   </div>
-                  
-                
               </div>
             </div>
           </div>

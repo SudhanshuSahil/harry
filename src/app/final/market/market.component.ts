@@ -15,32 +15,31 @@ export class MarketComponent{
   focus1;
   focus2;
 
-  showSwal(type) {
-    if (type == 'input-field') {
-       Swal.fire({
-           title: 'Input Bidding Value',
-           html: '<div class="form-group">' +
-               '<input id="input-field" type="text" class="form-control" />' +
-               '</div>',
-           showCancelButton: true,
-           customClass:{
-             confirmButton: 'btn btn-success',
-             cancelButton: 'btn btn-danger',
-           },
-           buttonsStyling: false
-       }).then(function(result) {
-           Swal.fire({
-               icon: 'success',
-               html: 'You entered: <strong>' +
-                   $('#input-field').val() +
-                   '</strong>',
-               customClass:{
-                 confirmButton: 'btn btn-success',
-               },
-               buttonsStyling: false
-           })
-       })
-     }
+  send(type) {
+    Swal.fire({
+      title: 'Input Bidding Value',
+      html: '<div class="form-group">' +
+          '<input id="input-field" type="text" class="form-control" />' +
+          '</div>',
+      showCancelButton: true,
+      customClass:{
+        confirmButton: 'btn btn-success',
+        cancelButton: 'btn btn-danger',
+      },
+      buttonsStyling: false
+  }).then(function(result) {
+      console.log($('#input-field').val(), type)
+      // Swal.fire({
+      //     icon: 'success',
+      //     html: 'You entered: <strong>' +
+      //         $('#input-field').val() +
+      //         '</strong>',
+      //     customClass:{
+      //       confirmButton: 'btn btn-success',
+      //     },
+      //     buttonsStyling: false
+      // })
+  })
    }
   constructor(private http: HttpClient) { }
 
