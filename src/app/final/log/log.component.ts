@@ -9,6 +9,9 @@ import { data } from 'jquery';
   styleUrls: ['./log.component.css']
 })
 export class LogComponent implements OnInit {
+  focus;
+  focus1;
+  focus2;
   team;
   pass;
 
@@ -31,5 +34,4 @@ export class LogComponent implements OnInit {
       }
     )
   }
-
 }

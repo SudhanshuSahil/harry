@@ -11,70 +11,6 @@ declare var $:any;
 })
 export class Lvl7p1Component implements OnInit {
   test;
-  showSwal(type) {
-    if (type == 'input-field') {
-       Swal.fire({
-           title: 'Input Bidding Value',
-           html: '<div class="form-group">' +
-               '<input id="input-field" type="text" class="form-control" />' +
-               '</div>',
-           showCancelButton: true,
-           customClass:{
-             confirmButton: 'btn btn-success',
-             cancelButton: 'btn btn-danger',
-           },
-           buttonsStyling: false
-       }).then(function(result) {
-           Swal.fire({
-               icon: 'success',
-               html: 'You entered: <strong>' +
-                   $('#input-field').val() +
-                   '</strong>',
-               customClass:{
-                 confirmButton: 'btn btn-success',
-               },
-               buttonsStyling: false
-           })
-       })
-     }
-     else if (type == 'warning-message-and-cancel') {
-      Swal.fire({
-          title: 'Are you sure?',
-          text: 'You will not be able to recover this item!',
-          icon: 'warning',
-          showCancelButton: true,
-          confirmButtonText: 'Yes, sell it!',
-          cancelButtonText: 'No, keep it',
-          customClass:{
-            confirmButton: "btn btn-success",
-            cancelButton: "btn btn-danger",
-          },
-          buttonsStyling: false
-      }).then((result) => {
-        if (result.value) {
-          Swal.fire({
-              title: 'Deleted!',
-              text: 'Your item has been sold.',
-              icon: 'success',
-              customClass:{
-                confirmButton: "btn btn-success",
-              },
-              buttonsStyling: false
-          })
-        } else {
-          Swal.fire({
-              title: 'Cancelled',
-              text: 'Your item is safe :)',
-              icon: 'error',
-              customClass:{
-                confirmButton: "btn btn-info",
-              },
-              buttonsStyling: false
-          })
-        }
-      })
-   }
-  }
   focus;
   focus1;
   focus2;
@@ -126,6 +62,11 @@ export class Lvl7p1Component implements OnInit {
           this.sidebarVisible = false;
           body.classList.remove('nav-open');
       }
+   }
+
+
+   send() {
+     console.log(this.test)
    }
   }
   

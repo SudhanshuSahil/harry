@@ -20,6 +20,7 @@ import { Lvl7p2Component } from './final/task/lvl7p2/lvl7p2.component';
 import { Quiz1Component } from './final/task/quiz1/quiz1.component';
 import { Quiz2Component } from './final/task/quiz2/quiz2.component';
 import { Lvl2CopyComponent } from './final/lvl2-copy/lvl2-copy.component';
+import { Lvl7p1CopyComponent } from './final/lvl7p1-copy/lvl7p1-copy.component';
 
 export const AppRoutes: Routes = [{
         path: '',
@@ -66,7 +67,7 @@ export const AppRoutes: Routes = [{
           component: Lvl6p3Component,
       },{
           path: 'lvl7p1',
-          component: Lvl7p1Component,
+          component: Lvl7p1CopyComponent,
       },{
           path: 'lvl7p2',
           component: Lvl7p2Component,

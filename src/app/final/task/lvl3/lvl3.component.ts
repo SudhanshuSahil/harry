@@ -37,12 +37,27 @@ export class Lvl3Component implements OnInit {
     body.classList.add('login-page');
     var navbar : HTMLElement = this.element.nativeElement;
     this.toggleButton = navbar.getElementsByClassName('navbar-toggle')[0];
+    var url = "https://compi-backend.ecell.in/harrypotter/team";
+    var header = new HttpHeaders({
+      "Authorization": "Token " + localStorage.getItem('hp_token')
+    })
+
+    this.http.get<any>(url, {headers: header}).subscribe(
+      data => {
+        console.log(data)
+        this.team = data['team']
+        localStorage.setItem('team_data', JSON.stringify(this.team))
+      }
+    )
+
 
   }
   ngOnDestroy(){
       var body = document.getElementsByTagName('body')[0];
       body.classList.remove('login-page');
   }
+
+
   sidebarToggle(){
       var toggleButton = this.toggleButton;
       var body = document.getElementsByTagName('body')[0];
@@ -81,4 +96,5 @@ export class Lvl3Component implements OnInit {
       }
     )
   }
+  
 }
