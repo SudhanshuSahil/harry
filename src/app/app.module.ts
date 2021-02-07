@@ -44,7 +44,6 @@ import { InvestComponent } from './final/invest/invest.component';
         AppComponent,
         AdminLayoutComponent,
         AuthLayoutComponent,
-        RegComponent,
         LogComponent,
         MainComponent,
         LeaderboardComponent,
