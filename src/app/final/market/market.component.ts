@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 declare var $:any;
 import Swal from 'sweetalert2';
 
@@ -13,35 +13,31 @@ declare var $:any;
 export class MarketComponent{
   focus;
   focus1;
-  focus2;
-
-  send(type) {
-    Swal.fire({
-      title: 'Input Bidding Value',
-      html: '<div class="form-group">' +
-          '<input id="input-field" type="text" class="form-control" />' +
-          '</div>',
-      showCancelButton: true,
-      customClass:{
-        confirmButton: 'btn btn-success',
-        cancelButton: 'btn btn-danger',
-      },
-      buttonsStyling: false
-  }).then(function(result) {
-      console.log($('#input-field').val(), type)
-      // Swal.fire({
-      //     icon: 'success',
-      //     html: 'You entered: <strong>' +
-      //         $('#input-field').val() +
-      //         '</strong>',
-      //     customClass:{
-      //       confirmButton: 'btn btn-success',
-      //     },
-      //     buttonsStyling: false
-      // })
-  })
-   }
   constructor(private http: HttpClient) { }
+  focus2;
+  url;
+  test;
+
+    send(type) {
+    console.log(type, this.test);
+    var url = "https://compi-backend.ecell.in/harrypotter/bid/";
+    
+
+    var body = new FormData()
+    body.append('price', this.test)
+    body.append('item', type)
+
+    var header = new HttpHeaders({
+      "Authorization": "Token " + localStorage.getItem('hp_token')
+    })
+    
+    console.log("Token " + localStorage.getItem('hp_token'))
+    this.http.post<any>(url, body, {headers: header}).subscribe(
+      data => {
+        console.log(data)
+      }
+    )
+   }
 
   ngOnInit(): void { 
     this.checkFullPageBackgroundImage();

@@ -28,6 +28,7 @@ import { SellComponent } from './final/sell/sell.component';
 import { InvestComponent } from './final/invest/invest.component';
 import { Quiz1Component } from './final/task/quiz1/quiz1.component';
 import { Quiz2Component } from './final/task/quiz2/quiz2.component';
+import { MarketComponent } from './final/market/market.component';
 
 
 @NgModule({
@@ -62,6 +63,7 @@ import { Quiz2Component } from './final/task/quiz2/quiz2.component';
         RegComponent,
         Quiz1Component,
         Quiz2Component,
+        MarketComponent,
     ],
     bootstrap:    [ AppComponent ]
 })
