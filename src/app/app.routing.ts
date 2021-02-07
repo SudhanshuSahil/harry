@@ -19,6 +19,7 @@ import { Lvl7p1Component } from './final/task/lvl7p1/lvl7p1.component';
 import { Lvl7p2Component } from './final/task/lvl7p2/lvl7p2.component';
 import { Quiz1Component } from './final/task/quiz1/quiz1.component';
 import { Quiz2Component } from './final/task/quiz2/quiz2.component';
+import { LeaderboardComponent } from './final/leaderboard/leaderboard.component';
 import { Lvl2CopyComponent } from './final/lvl2-copy/lvl2-copy.component';
 import { Lvl7p1CopyComponent } from './final/lvl7p1-copy/lvl7p1-copy.component';
 
@@ -35,6 +36,9 @@ export const AppRoutes: Routes = [{
       },{
         path: 'main',
         component: MainComponent,
+      },{
+          path: 'leaderboard',
+          component: LeaderboardComponent,
       },{
           path: 'lvl1p1',
           component: Lvl1p1Component,

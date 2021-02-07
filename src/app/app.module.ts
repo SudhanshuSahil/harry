@@ -19,6 +19,7 @@ import { AppRoutes } from './app.routing';
 import { RegComponent } from './final/reg/reg.component';
 import { LogComponent } from './final/log/log.component';
 import { MainComponent } from './final/main/main.component';
+import { LeaderboardComponent } from './final/leaderboard/leaderboard.component';
 import { Lvl2CopyComponent } from './final/lvl2-copy/lvl2-copy.component';
 import { Lvl7p1CopyComponent } from './final/lvl7p1-copy/lvl7p1-copy.component';
 
@@ -43,6 +44,7 @@ import { Lvl7p1CopyComponent } from './final/lvl7p1-copy/lvl7p1-copy.component';
         AuthLayoutComponent,
         LogComponent,
         MainComponent,
+        LeaderboardComponent,
         Lvl2CopyComponent,
         Lvl7p1CopyComponent,
     ],
