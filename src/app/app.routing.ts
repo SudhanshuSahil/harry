@@ -22,8 +22,14 @@ import { Quiz2Component } from './final/task/quiz2/quiz2.component';
 import { LeaderboardComponent } from './final/leaderboard/leaderboard.component';
 import { Lvl2CopyComponent } from './final/lvl2-copy/lvl2-copy.component';
 import { Lvl7p1CopyComponent } from './final/lvl7p1-copy/lvl7p1-copy.component';
+<<<<<<< HEAD
 import { Q2Component } from './final/q2/q2.component';
 import { Q1Component } from './final/q1/q1.component';
+=======
+import { SellComponent } from './final/sell/sell.component';
+import { MarketComponent } from './final/market/market.component';
+import { InvestComponent } from './final/invest/invest.component';
+>>>>>>> c5dbac6e3f82887a72649acf5a15b0d2e9878882
 
 export const AppRoutes: Routes = [{
         path: '',
@@ -83,6 +89,15 @@ export const AppRoutes: Routes = [{
       },{
           path: 'quiz2',
           component: Q2Component,
+      },{
+          path: 'sell',
+          component: SellComponent,
+      },{
+          path: 'invest',
+          component: InvestComponent,
+      },{
+          path: 'market',
+          component: MarketComponent,
       },{
         path: '',
         component: AdminLayoutComponent,
