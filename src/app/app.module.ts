@@ -3,7 +3,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http' 
-import { APP_BASE_HREF } from '@angular/common';
+import { APP_BASE_HREF, CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -26,6 +26,9 @@ import { Q2Component } from './final/q2/q2.component';
 import { Q1Component } from './final/q1/q1.component';
 import { SellComponent } from './final/sell/sell.component';
 import { InvestComponent } from './final/invest/invest.component';
+import { Quiz1Component } from './final/task/quiz1/quiz1.component';
+import { Quiz2Component } from './final/task/quiz2/quiz2.component';
+
 
 @NgModule({
     imports:      [
@@ -40,7 +43,8 @@ import { InvestComponent } from './final/invest/invest.component';
         NavbarModule,
         FooterModule,
         FixedPluginModule,
-        HttpClientModule
+        HttpClientModule,
+        CommonModule,
     ],
     declarations: [
         AppComponent,
@@ -55,6 +59,9 @@ import { InvestComponent } from './final/invest/invest.component';
         Q1Component,
         SellComponent,
         InvestComponent,
+        RegComponent,
+        Quiz1Component,
+        Quiz2Component,
     ],
     bootstrap:    [ AppComponent ]
 })

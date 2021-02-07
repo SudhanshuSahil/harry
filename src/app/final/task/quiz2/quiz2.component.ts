@@ -125,7 +125,7 @@ export class Quiz2Component implements OnInit {
           body.classList.remove('nav-open');
       }
    }
-   send(button) {
+   send(button: string | Blob) {
      var url = "https://compi-backend.ecell.in/harrypotter/test/";
      console.log(button);
  

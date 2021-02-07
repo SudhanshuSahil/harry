@@ -18,6 +18,27 @@ export class SellComponent implements OnInit {
   constructor(private element : ElementRef,private http: HttpClient) {
    }
 
+   send(button) {
+     var url = "https://compi-backend.ecell.in/harrypotter/sell/";
+     console.log(button);
+ 
+     var body = new FormData()
+     body.append('decision', button)
+ 
+     var header = new HttpHeaders({
+       "Authorization": "Token " + localStorage.getItem('hp_token')
+     })
+     
+     console.log("Token " + localStorage.getItem('hp_token'))
+     this.http.post<any>(url, body, {headers: header}).subscribe(
+       data => {
+         console.log(data)
+         this.team = data['team']
+         localStorage.setItem('team_data', JSON.stringify(this.team))
+       }
+     )
+   }
+
   ngOnInit(): void { 
     this.checkFullPageBackgroundImage();
 
@@ -50,26 +71,7 @@ export class SellComponent implements OnInit {
         var image_container = '<div class="full-page-background" style="background-image: url(' + image_src + ') "/>'
         $page.append(image_container);
     }
-};
-send(button) {
-  var url = "https://compi-backend.ecell.in/harrypotter/sell/";
-  console.log(button);
-
-  var body = new FormData()
-  body.append('decision', button)
-
-  var header = new HttpHeaders({
-    "Authorization": "Token " + localStorage.getItem('hp_token')
-  })
-
-  this.http.post<any>(url, body, {headers: header}).subscribe(
-    data => {
-      console.log(data)
-      this.team = data['team']
-      localStorage.setItem('team_data', JSON.stringify(this.team))
-    }
-  )
-}
+  }
 
 
 
