@@ -22,6 +22,8 @@ import { Quiz2Component } from './final/task/quiz2/quiz2.component';
 import { LeaderboardComponent } from './final/leaderboard/leaderboard.component';
 import { Lvl2CopyComponent } from './final/lvl2-copy/lvl2-copy.component';
 import { Lvl7p1CopyComponent } from './final/lvl7p1-copy/lvl7p1-copy.component';
+import { Q2Component } from './final/q2/q2.component';
+import { Q1Component } from './final/q1/q1.component';
 
 export const AppRoutes: Routes = [{
         path: '',
@@ -77,10 +79,10 @@ export const AppRoutes: Routes = [{
           component: Lvl7p2Component,
       },{
           path: 'quiz1',
-          component: Quiz1Component,
+          component: Q1Component,
       },{
           path: 'quiz2',
-          component: Quiz2Component,
+          component: Q2Component,
       },{
         path: '',
         component: AdminLayoutComponent,

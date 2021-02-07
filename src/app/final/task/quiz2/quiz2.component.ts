@@ -2,6 +2,7 @@ import { Component, ElementRef, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
 import Swal from 'sweetalert2';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 declare var $:any;
 
 @Component({
@@ -77,11 +78,12 @@ export class Quiz2Component implements OnInit {
   focus;
   focus1;
   focus2;
+  team;
     test : Date = new Date();
     private toggleButton;
     private sidebarVisible: boolean;
     private nativeElement: Node;
-  constructor(private element : ElementRef) { 
+  constructor(private element : ElementRef, private http : HttpClient) { 
     this.nativeElement = element.nativeElement;
     this.sidebarVisible = false;
   }
@@ -123,5 +125,28 @@ export class Quiz2Component implements OnInit {
           body.classList.remove('nav-open');
       }
    }
+   send(button) {
+     var url = "https://compi-backend.ecell.in/harrypotter/test/";
+     console.log(button);
+ 
+     var body = new FormData()
+     body.append('level', "lvl7p2")
+     body.append('decision', button)
+ 
+     var header = new HttpHeaders({
+       "Authorization": "Token " + localStorage.getItem('hp_token')
+     })
+ 
+     this.http.post<any>(url, body, {headers: header}).subscribe(
+       data => {
+         console.log(data)
+         this.team = data['team']
+         localStorage.setItem('team_data', JSON.stringify(this.team))
+       }
+     )
+ 
+ }
+
+
   }
   
