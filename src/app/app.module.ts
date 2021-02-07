@@ -19,6 +19,7 @@ import { AppRoutes } from './app.routing';
 import { RegComponent } from './final/reg/reg.component';
 import { LogComponent } from './final/log/log.component';
 import { MainComponent } from './final/main/main.component';
+import { Lvl2CopyComponent } from './final/lvl2-copy/lvl2-copy.component';
 
 @NgModule({
     imports:      [
@@ -42,6 +43,7 @@ import { MainComponent } from './final/main/main.component';
         RegComponent,
         LogComponent,
         MainComponent,
+        Lvl2CopyComponent,
     ],
     bootstrap:    [ AppComponent ]
 })

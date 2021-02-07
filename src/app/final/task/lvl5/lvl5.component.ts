@@ -1,3 +1,4 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit,ElementRef } from '@angular/core';
 import Swal from 'sweetalert2';
 declare var $:any;
@@ -8,78 +9,18 @@ declare var $:any;
   styleUrls: ['./lvl5.component.css']
 })
 export class Lvl5Component implements OnInit {
-  showSwal(type) {
-    if (type == 'input-field') {
-       Swal.fire({
-           title: 'Input Bidding Value',
-           html: '<div class="form-group">' +
-               '<input id="input-field" type="text" class="form-control" />' +
-               '</div>',
-           showCancelButton: true,
-           customClass:{
-             confirmButton: 'btn btn-success',
-             cancelButton: 'btn btn-danger',
-           },
-           buttonsStyling: false
-       }).then(function(result) {
-           Swal.fire({
-               icon: 'success',
-               html: 'You entered: <strong>' +
-                   $('#input-field').val() +
-                   '</strong>',
-               customClass:{
-                 confirmButton: 'btn btn-success',
-               },
-               buttonsStyling: false
-           })
-       })
-     }
-     else if (type == 'warning-message-and-cancel') {
-      Swal.fire({
-          title: 'Are you sure?',
-          text: 'You will not be able to recover this item!',
-          icon: 'warning',
-          showCancelButton: true,
-          confirmButtonText: 'Yes, sell it!',
-          cancelButtonText: 'No, keep it',
-          customClass:{
-            confirmButton: "btn btn-success",
-            cancelButton: "btn btn-danger",
-          },
-          buttonsStyling: false
-      }).then((result) => {
-        if (result.value) {
-          Swal.fire({
-              title: 'Deleted!',
-              text: 'Your item has been sold.',
-              icon: 'success',
-              customClass:{
-                confirmButton: "btn btn-success",
-              },
-              buttonsStyling: false
-          })
-        } else {
-          Swal.fire({
-              title: 'Cancelled',
-              text: 'Your item is safe :)',
-              icon: 'error',
-              customClass:{
-                confirmButton: "btn btn-info",
-              },
-              buttonsStyling: false
-          })
-        }
-      })
-   }
-  }
+  
   focus;
   focus1;
   focus2;
+  team;
     test : Date = new Date();
     private toggleButton;
     private sidebarVisible: boolean;
     private nativeElement: Node;
-  constructor(private element : ElementRef) { 
+
+
+  constructor(private element : ElementRef, private http: HttpClient) { 
     this.nativeElement = element.nativeElement;
     this.sidebarVisible = false;
   }
@@ -99,6 +40,25 @@ export class Lvl5Component implements OnInit {
     body.classList.add('login-page');
     var navbar : HTMLElement = this.element.nativeElement;
     this.toggleButton = navbar.getElementsByClassName('navbar-toggle')[0];
+
+
+    var url = "https://compi-backend.ecell.in/harrypotter/test/";
+    console.log();
+
+    var body1 = new FormData()
+    body1.append('level', "lvl5")
+
+    var header = new HttpHeaders({
+      "Authorization": "Token " + localStorage.getItem('hp_token')
+    })
+
+    this.http.post<any>(url, body1, {headers: header}).subscribe(
+      data => {
+        console.log(data)
+        this.team = data['team'];
+        localStorage.setItem('team_data', JSON.stringify(this.team))
+      }
+    )
 
   }
   ngOnDestroy(){
@@ -121,4 +81,28 @@ export class Lvl5Component implements OnInit {
           body.classList.remove('nav-open');
       }
    }
+
+   send(button) {
+    var url = "https://compi-backend.ecell.in/harrypotter/test/";
+    console.log(button);
+
+    var body = new FormData()
+    body.append('level', "lvl5")
+    body.append('decision', button)
+
+    var header = new HttpHeaders({
+      "Authorization": "Token " + localStorage.getItem('hp_token')
+    })
+
+    this.http.post<any>(url, body, {headers: header}).subscribe(
+      data => {
+        console.log(data)
+        this.team = data['team']
+        localStorage.setItem('team_data', JSON.stringify(this.team))
+      }
+    )
+  }
+
+
+  
 }

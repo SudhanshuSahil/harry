@@ -10,6 +10,7 @@ declare var $:any;
   styleUrls: ['./lvl7p1.component.css']
 })
 export class Lvl7p1Component implements OnInit {
+  test;
   showSwal(type) {
     if (type == 'input-field') {
        Swal.fire({
@@ -77,14 +78,17 @@ export class Lvl7p1Component implements OnInit {
   focus;
   focus1;
   focus2;
-    test : Date = new Date();
     private toggleButton;
     private sidebarVisible: boolean;
     private nativeElement: Node;
+
+
   constructor(private element : ElementRef) { 
     this.nativeElement = element.nativeElement;
     this.sidebarVisible = false;
   }
+
+  
   checkFullPageBackgroundImage(){
     var $page = $('.full-page');
     var image_src = $page.data('image');

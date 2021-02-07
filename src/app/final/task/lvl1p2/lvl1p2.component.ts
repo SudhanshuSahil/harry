@@ -138,7 +138,7 @@ export class Lvl1p2Component implements OnInit {
 
    send(button) {
     var url = "https://compi-backend.ecell.in/harrypotter/test/";
-    console.log(button);
+    // console.log(button);
 
     var body = new FormData()
     body.append('level', "lvl1p2")
