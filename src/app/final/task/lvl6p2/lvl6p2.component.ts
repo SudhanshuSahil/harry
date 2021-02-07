@@ -119,27 +119,6 @@ export class Lvl6p2Component implements OnInit {
 
   }
   
-  send(button) {
-    var url = "https://compi-backend.ecell.in/harrypotter/test/";
-    console.log(button);
-
-    var body = new FormData()
-    body.append('level', "lvl6p2")
-    body.append('decision', button)
-
-    var header = new HttpHeaders({
-      "Authorization": "Token " + localStorage.getItem('hp_token')
-    })
-
-    this.http.post<any>(url, body, {headers: header}).subscribe(
-      data => {
-        console.log(data)
-        this.team = data['team']
-        localStorage.setItem('team_data', JSON.stringify(this.team))
-      }
-    )
-
-  }
   ngOnDestroy(){
     var body = document.getElementsByTagName('body')[0];
     body.classList.remove('login-page');
@@ -161,4 +140,29 @@ export class Lvl6p2Component implements OnInit {
           body.classList.remove('nav-open');
       }
    }
+
+
+   send(button) {
+    var url = "https://compi-backend.ecell.in/harrypotter/test/";
+    console.log(button);
+
+    var body = new FormData()
+    body.append('level', "lvl6p2")
+    body.append('decision', button)
+
+    var header = new HttpHeaders({
+      "Authorization": "Token " + localStorage.getItem('hp_token')
+    })
+
+    this.http.post<any>(url, body, {headers: header}).subscribe(
+      data => {
+        console.log(data)
+        this.team = data['team']
+        localStorage.setItem('team_data', JSON.stringify(this.team))
+      }
+    )
+  }
+
+
+ 
 }

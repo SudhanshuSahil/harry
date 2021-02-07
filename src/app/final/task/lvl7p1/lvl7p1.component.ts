@@ -10,81 +10,21 @@ declare var $:any;
   styleUrls: ['./lvl7p1.component.css']
 })
 export class Lvl7p1Component implements OnInit {
-  showSwal(type) {
-    if (type == 'input-field') {
-       Swal.fire({
-           title: 'Input Bidding Value',
-           html: '<div class="form-group">' +
-               '<input id="input-field" type="text" class="form-control" />' +
-               '</div>',
-           showCancelButton: true,
-           customClass:{
-             confirmButton: 'btn btn-success',
-             cancelButton: 'btn btn-danger',
-           },
-           buttonsStyling: false
-       }).then(function(result) {
-           Swal.fire({
-               icon: 'success',
-               html: 'You entered: <strong>' +
-                   $('#input-field').val() +
-                   '</strong>',
-               customClass:{
-                 confirmButton: 'btn btn-success',
-               },
-               buttonsStyling: false
-           })
-       })
-     }
-     else if (type == 'warning-message-and-cancel') {
-      Swal.fire({
-          title: 'Are you sure?',
-          text: 'You will not be able to recover this item!',
-          icon: 'warning',
-          showCancelButton: true,
-          confirmButtonText: 'Yes, sell it!',
-          cancelButtonText: 'No, keep it',
-          customClass:{
-            confirmButton: "btn btn-success",
-            cancelButton: "btn btn-danger",
-          },
-          buttonsStyling: false
-      }).then((result) => {
-        if (result.value) {
-          Swal.fire({
-              title: 'Deleted!',
-              text: 'Your item has been sold.',
-              icon: 'success',
-              customClass:{
-                confirmButton: "btn btn-success",
-              },
-              buttonsStyling: false
-          })
-        } else {
-          Swal.fire({
-              title: 'Cancelled',
-              text: 'Your item is safe :)',
-              icon: 'error',
-              customClass:{
-                confirmButton: "btn btn-info",
-              },
-              buttonsStyling: false
-          })
-        }
-      })
-   }
-  }
+  test;
   focus;
   focus1;
   focus2;
-    test : Date = new Date();
     private toggleButton;
     private sidebarVisible: boolean;
     private nativeElement: Node;
+
+
   constructor(private element : ElementRef) { 
     this.nativeElement = element.nativeElement;
     this.sidebarVisible = false;
   }
+
+  
   checkFullPageBackgroundImage(){
     var $page = $('.full-page');
     var image_src = $page.data('image');
@@ -122,6 +62,11 @@ export class Lvl7p1Component implements OnInit {
           this.sidebarVisible = false;
           body.classList.remove('nav-open');
       }
+   }
+
+
+   send() {
+     console.log(this.test)
    }
   }
   

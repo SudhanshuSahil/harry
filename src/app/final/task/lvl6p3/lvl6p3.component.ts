@@ -120,6 +120,7 @@ export class Lvl6p3Component implements OnInit {
       var body = document.getElementsByTagName('body')[0];
       body.classList.remove('login-page');
   }
+
   send(button) {
     var url = "https://compi-backend.ecell.in/harrypotter/test/";
     console.log(button);
@@ -139,8 +140,9 @@ export class Lvl6p3Component implements OnInit {
         localStorage.setItem('team_data', JSON.stringify(this.team))
       }
     )
+  }
 
-}
+
 
   sidebarToggle(){
       var toggleButton = this.toggleButton;

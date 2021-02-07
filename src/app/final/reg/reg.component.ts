@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 declare var $:any;
 
 
@@ -18,7 +19,7 @@ export class RegComponent implements OnInit {
   mem3;
   password;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   ngOnInit(): void { 
     this.checkFullPageBackgroundImage();
@@ -55,6 +56,7 @@ submit(){
       data => {
         console.log(data)
         localStorage.setItem('hp_token', data['token'])
+        this.router.navigateByUrl('/main')
       }
     )
 

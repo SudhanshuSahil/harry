@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { data } from 'jquery';
 
 @Component({
@@ -14,7 +15,7 @@ export class LogComponent implements OnInit {
   team;
   pass;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router ) { }
 
   ngOnInit(): void {
   }
@@ -29,6 +30,7 @@ export class LogComponent implements OnInit {
       data => {
         console.log(data)
         localStorage.setItem('hp_token', data['token'])
+        this.router.navigateByUrl('/main')
       }
     )
   }
