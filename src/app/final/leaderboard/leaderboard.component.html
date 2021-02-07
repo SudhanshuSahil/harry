@@ -19,12 +19,7 @@
         <ul class="navbar-nav">
           <li class="nav-item ">
             <a href="register" class="nav-link">
-              <i class="nc-icon nc-book-bookmark"></i> Register
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a href="login"  class="nav-link">
-              <i class="nc-icon nc-tap-01"></i> Login
+              <i class="nc-icon nc-book-bookmark"></i> Logout
             </a>
           </li>
         </ul>
@@ -33,10 +28,92 @@
 </nav>
 <div class="wrapper wrapper-full-page ">
     <div class="full-page register-page section-image" filter-color="black" data-image="./assets/img/bg/jan-sendereks.jpg">
-      <div class="content">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-5 col-md-5 ml-auto">
+      <div class="container">
+            <div class="col-md-12">
+                <div class="card card-plain">
+                  <div class="card-header">
+                    <h4 class="card-title"> Table on Plain Background</h4>
+                    <p class="card-category"> Here is a subtitle for this table</p>
+                  </div>
+                  <div class="card-body">
+                    <div class="table-responsive">
+                      <table class="table" style="color:bisque;">
+                        <thead class="">
+                          <th>
+                            Team Name
+                          </th>
+                          <th>
+                            Member-1
+                          </th>
+                          <th>
+                            Member-2
+                          </th>
+                          <th>
+                            Member-3
+                          </th>
+                          <th class="text-right" style="color:bisque;">
+                            Salary
+                          </th>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>
+                                Dakota Rice
+                            </td>
+                            <td>
+                                Dakota Rice
+                            </td>
+                            <td>
+                                Dakota Rice
+                            </td>
+                            <td>
+                                Dakota Rice
+                            </td>
+                            <td class="text-right">
+                              $36,738
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              Minerva Hooper
+                            </td>
+                            <td>
+                                Minerva Hooper
+                            </td>
+                            <td>
+                                Minerva Hooper
+                            </td>
+                            <td>
+                                Minerva Hooper
+                            </td>
+                            <td class="text-right">
+                              $23,789
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                                Sage Rodriguez
+                            </td>
+                            <td>
+                                Sage Rodriguez
+                            </td>
+                            <td>
+                                Sage Rodriguez
+                            </td>
+                            <td>
+                                Sage Rodriguez
+                            </td>
+                            <td class="text-right">
+                              $56,142
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <!-- <div class="col-lg-5 col-md-5 ml-auto">
               <div class="info-area info-horizontal mt-5">
                 <div class="icon icon-primary">
                   <i class="nc-icon nc-tv-2"></i>
@@ -70,8 +147,11 @@
                   </p>
                 </div>
               </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mr-auto">
+            </div> -->
+
+            <!-- Form -->
+
+            <!-- <div class="col-lg-4 col-md-6 mr-auto">
               <div class="card card-signup text-center">
                 <div class="card-header ">
                   <h4 class="card-title">Register</h4>
@@ -84,7 +164,7 @@
                           <i class="nc-icon nc-single-02"></i>
                         </span>
                       </div>
-                      <input type="text" class="form-control" name="team" [(ngModel)]="team" placeholder="Team Name..." (focus)="focus=true" (blur)="focus=false">
+                      <input type="text" class="form-control" placeholder="Team Name..." (focus)="focus=true" (blur)="focus=false">
                     </div>
                     <div class="input-group" [ngClass]="{'input-group-focus':focus1===true}">
                       <div class="input-group-prepend">
@@ -92,7 +172,7 @@
                           <i class="nc-icon nc-circle-10"></i>
                         </span>
                       </div>
-                      <input type="text" name="mem1" [(ngModel)]="mem1" placeholder="First Player Name..." class="form-control" (focus)="focus1=true" (blur)="focus1=false">
+                      <input type="text" placeholder="First Player Name..." class="form-control" (focus)="focus1=true" (blur)="focus1=false">
                     </div>
                     <div class="input-group" [ngClass]="{'input-group-focus':focus1===true}">
                       <div class="input-group-prepend">
@@ -100,7 +180,7 @@
                           <i class="nc-icon nc-circle-10"></i>
                         </span>
                       </div>
-                      <input type="text" name="mem2" [(ngModel)]="mem2" placeholder="Second Player Name..." class="form-control" (focus)="focus1=true" (blur)="focus1=false">
+                      <input type="text" placeholder="Second Player Name..." class="form-control" (focus)="focus1=true" (blur)="focus1=false">
                     </div>
                     <div class="input-group" [ngClass]="{'input-group-focus':focus1===true}">
                       <div class="input-group-prepend">
@@ -108,7 +188,7 @@
                           <i class="nc-icon nc-circle-10"></i>
                         </span>
                       </div>
-                      <input type="text" name="mem3" [(ngModel)]="mem3" placeholder="Third Player Name..." class="form-control" (focus)="focus1=true" (blur)="focus1=false">
+                      <input type="text" placeholder="Third Player Name..." class="form-control" (focus)="focus1=true" (blur)="focus1=false">
                     </div>
                     <div class="input-group"  [ngClass]="{'input-group-focus':focus1===true}">
                       <div class="input-group-prepend">
@@ -116,22 +196,22 @@
                           <i class="nc-icon nc-key-25"></i>
                         </span>
                       </div>
-                      <input type="password" name="password" [(ngModel)]="password" placeholder="Password" class="form-control" (focus)="focus1=true" (blur)="focus1=false">
+                      <input type="password" placeholder="Password" class="form-control" (focus)="focus1=true" (blur)="focus1=false">
                     </div>
                     <div class="card-footer text-center">
-                      <button type="submit" class="btn btn-info btn-round" (click)="submit()">Register</button>
+                      <button type="submit" class="btn btn-info btn-round">Register</button>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
+            </div> -->
+
+
       </div>
     <!-- <div *ngFor = " let college of colleges">
       {{college.name}}
     </div> -->
-      <footer class="footer footer-black  footer-white ">
+      <!-- <footer class="footer footer-black  footer-white ">
         <div class="container">
           <div class="row">
             <nav class="footer-nav">
@@ -154,7 +234,7 @@
             </div>
           </div>
         </div>
-      </footer>
+      </footer> -->
     </div>
   </div>
   
