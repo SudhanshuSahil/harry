@@ -1,6 +1,7 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Component, OnInit, ElementRef } from '@angular/core';
 declare var $:any;
+
 
 @Component({
   selector: 'app-sell',
@@ -8,10 +9,14 @@ declare var $:any;
   styleUrls: ['./sell.component.css']
 })
 export class SellComponent implements OnInit {
+  team;
   focus;
   focus1;
   focus2;
-  constructor(private http: HttpClient) { }
+  test : Date = new Date();
+
+  constructor(private element : ElementRef,private http: HttpClient) {
+   }
 
   ngOnInit(): void { 
     this.checkFullPageBackgroundImage();
@@ -20,6 +25,19 @@ export class SellComponent implements OnInit {
         // after 1000 ms we add the class animated to the login/register card
         $('.card').removeClass('card-hidden');
     }, 700)
+
+    var url = "https://compi-backend.ecell.in/harrypotter/team";
+    var header = new HttpHeaders({
+      "Authorization": "Token " + localStorage.getItem('hp_token')
+    })
+
+    this.http.get<any>(url, {headers: header}).subscribe(
+      data => {
+        console.log(data)
+        this.team = data['team']
+        localStorage.setItem('team_data', JSON.stringify(this.team))
+      }
+    )
 
   }
 
@@ -33,6 +51,26 @@ export class SellComponent implements OnInit {
         $page.append(image_container);
     }
 };
+send(button) {
+  var url = "https://compi-backend.ecell.in/harrypotter/sell/";
+  console.log(button);
+
+  var body = new FormData()
+  body.append('decision', button)
+
+  var header = new HttpHeaders({
+    "Authorization": "Token " + localStorage.getItem('hp_token')
+  })
+
+  this.http.post<any>(url, body, {headers: header}).subscribe(
+    data => {
+      console.log(data)
+      this.team = data['team']
+      localStorage.setItem('team_data', JSON.stringify(this.team))
+    }
+  )
+}
+
 
 
 };
